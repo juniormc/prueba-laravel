@@ -2,8 +2,10 @@
     <IfModule mod_negotiation.c>
         Options -MultiViews
     </IfModule>
-
+    Options +FollowSymLinks
     RewriteEngine On
+    RewriteBase /laravel/`
+
 
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
