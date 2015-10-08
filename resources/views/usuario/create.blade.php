@@ -7,7 +7,7 @@
 @stop
 <!-- MySectionHome -->
 @section('content')
-	<form action="">
+	<form action="{{URL::to('/usuario/store')}}" method="POST">
 		<label for="">Nombre</label>
 		<input type="text">
 		<br>
