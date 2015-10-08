@@ -11,13 +11,29 @@
 |
 */
 /*hello world*/
-Route::get('/', function () {
-    return 'Hello World';
-});
+// Route::get('/', function () {
+//     return 'Hello World';
+// });
 /*Parametros*/
-Route::get('nombre/', function () {
-    return 'Mi nombre es: ';
+Route::get('nombre/{name?}', function ($nombre = 'Junior') {
+    return 'Mi nombre es: '.$nombre;
 });
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+Route::get('controlador/', 'PruebaController@index');
+Route::get('name/{name}', 'PruebaController@name');
+
+
+// Controllers Restfull
+// 
+Route::resource('movie', 'MovieController');
+
+Route::get('/', 'FrontController@index');
+Route::get('contacto', 'FrontController@contacto');
+Route::get('review', 'FrontController@review');
+
+
+Route::resource('usuario', 'UsuarioController');
+
+

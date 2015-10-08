@@ -7,11 +7,18 @@
 @stop
 <!-- MySectionHome -->
 @section('content')
-	<h1>Index</h1>
-	<br>
-	<a href="{{URL::to('/')}}">Home</a>
-	<a href="{{URL::to('/review')}}">Reviews</a>
-	<a href="{{URL::to('/contacto')}}">Contacto</a>
+	<form action="">
+		<label for="">Nombre</label>
+		<input type="text">
+		<br>
+		<label for="">Correo</label>
+		<input type="text">
+		<br>
+		<label for="">Contraseña</label>
+		<input type="text">
+		<br>
+		<button>Registrar</button>
+	</form>
 @endsection
 <!-- js section -->
 @section('js')
