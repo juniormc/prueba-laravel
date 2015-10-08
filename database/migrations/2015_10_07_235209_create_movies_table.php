@@ -13,17 +13,16 @@ class CreateMoviesTable extends Migration
     public function up()
     {
         Schema::create('peliculas', function (Blueprint $table) {
-                $table->increments('id');
-                $table->string('title');
-                $table->text('excerpt');
-                $table->text('detail');
-                $table->string('image');
-                $table->boolean('isActive');
-                $table->integer('user_id');
-                $table->boolean('isFeactured');
-                $table->timestamps();
-            });
-        }
+            $table->increments('id');
+            $table->string('title');
+            $table->text('excerpt');
+            $table->text('detail');
+            $table->string('image');
+            $table->boolean('isActive');
+            $table->integer('user_id');
+            $table->boolean('isFeactured');
+            $table->timestamps();
+        });
     }
 
     /**
