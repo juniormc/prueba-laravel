@@ -36,4 +36,12 @@ Route::get('review', 'FrontController@review');
 
 Route::resource('usuario', 'UsuarioController');
 
+// Auth
+Route::resource('log', 'LogController');
+Route::resource('logout', 'LogController@logout');
+
+
+
+
+
 

@@ -7,10 +7,16 @@
 @stop
 <!-- MySectionHome -->
 @section('content')
-	Usuarios registrados
+	<h1>Usuarios registrados</h1>
 	<br>
 	<br>
-
+	<strong>
+		{!!Auth::user()->name!!}
+	</strong>
+	<br>
+	<br>
+	<a href="/logout">Cerrar Sesion</a>
+	<br><br>
 	@if(Session::has('message'))
 		<div style="color:green">
 			{{ Session::get('message') }}
