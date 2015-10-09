@@ -7,7 +7,8 @@
 @stop
 <!-- MySectionHome -->
 @section('content')
-	{!!Form::open(array('route' => 'usuario.store'))!!}
+{{-- edit --}}
+	{!!Form::model($user, ['route' => ['usuario.update', $user->id], 'method'=>'PUT'])!!}
 		{!!Form::label('Nombre');!!}
 		<br>
 		{!!Form::text('name');!!}
@@ -20,7 +21,11 @@
 		<br>
 		{!!Form::password('password');!!}
 		<br><br>
-		{!!Form::submit('Registro');!!}
+		{!!Form::submit('Actualizar');!!}
+	{!!Form::close()!!}
+{{-- delete --}}
+	{!!Form::open(['route' => ['usuario.destroy', $user->id], 'method'=>'DELETE'])!!}
+		{!!Form::submit('Eliminar');!!}
 	{!!Form::close()!!}
 @endsection
 <!-- js section -->
