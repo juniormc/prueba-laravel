@@ -7,6 +7,13 @@
 @stop
 <!-- MySectionHome -->
 @section('content')
+	@if(count($errors) > 0)
+		<div style="color:red">
+			@foreach($errors->all() as $error)
+				<p>{!!$error!!}</p>	
+			@endforeach
+		</div>
+	@endif
 {{-- edit --}}
 	{!!Form::model($user, ['route' => ['usuario.update', $user->id], 'method'=>'PUT'])!!}
 		{!!Form::label('Nombre');!!}

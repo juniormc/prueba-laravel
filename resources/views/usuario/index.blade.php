@@ -12,7 +12,7 @@
 	<br>
 
 	@if(Session::has('message'))
-		<div style="color:red">
+		<div style="color:green">
 			{{ Session::get('message') }}
 		</div>
 		<br>

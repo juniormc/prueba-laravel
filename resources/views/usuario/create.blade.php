@@ -7,6 +7,13 @@
 @stop
 <!-- MySectionHome -->
 @section('content')
+	@if(count($errors) > 0)
+		<div style="color:red">
+			@foreach($errors->all() as $error)
+				<p>{!!$error!!}</p>	
+			@endforeach
+		</div>
+	@endif
 	{!!Form::open(array('route' => 'usuario.store'))!!}
 		{!!Form::label('Nombre');!!}
 		<br>
