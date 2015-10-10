@@ -8,10 +8,11 @@
 <!-- MySectionHome -->
 @section('content')
 	<h1>Usuarios registrados</h1>
+	<a href="{{url('/review')}}">Review</a>
 	<br>
 	<br>
 	<strong>
-		{!!Auth::user()->name!!}
+		{{-- {!!Auth::user()->name!!} --}}
 	</strong>
 	<br>
 	<br>
@@ -20,6 +21,13 @@
 	@if(Session::has('message'))
 		<div style="color:green">
 			{{ Session::get('message') }}
+		</div>
+		<br>
+		<br>
+	@endif
+	@if(Session::has('message-error'))
+		<div style="color:red">
+			{{ Session::get('message-error') }}
 		</div>
 		<br>
 		<br>

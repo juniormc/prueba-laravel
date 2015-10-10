@@ -14,6 +14,14 @@
 // Route::get('/', function () {
 //     return 'Hello World';
 // });
+
+Route::get('user/{name}', function ($name) {
+    return $name;
+})->where('name', '[A-Za-z]+');
+Route::get('user/profile', ['as' => 'profile', function () {
+    return 'profile';
+}]);
+
 /*Parametros*/
 Route::get('nombre/{name?}', function ($nombre = 'Junior') {
     return 'Mi nombre es: '.$nombre;

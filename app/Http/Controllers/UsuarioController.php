@@ -19,6 +19,11 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+       /* $this->middleware('auth', ['only' => 'index' ]);*/
+        $this->middleware('auth');
+        $this->middleware('admin', ['only' => 'update', 'destroy']);
+    }
     public function index()
     {
         return view("usuario.index",['users' => User::all()]);
@@ -51,6 +56,7 @@ class UsuarioController extends Controller
             $usuario->name       = $user; 
             $usuario->email      = $mail;
             $usuario->password   = $passwd;
+            $usuario->isAdmin    = false;
             // $usuario->password   = bcrypt($passwd);
             $usuario->save();
 
